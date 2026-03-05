@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>CalcolatoreKwh</title>
+    <style>
+
+     body{
+       font-family: Arial, sans-serif;
+       background-color: grey;
+       text-align: center;
+       margin-top: 80px;
+     }
+    
+     input{
+       width: 90%;
+       padding: 8px;
+       margin: 8px 0;
+     }
+     button {
+     padding: 10px 20px;
+     background-color: rgb(214, 145, 15);
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+
+     }
+     #risultato {
+     margin-top: 15px;
+     font-weight: bold;
+
+     }
+    </style>
+</head>
+<body>
+    
+ <h2>Calcolatore kWh</h2> 
+
+ <input type="number" id="watt" placeholder="Potenza in Watt (es. 2000)">
+ <input type="number" id="ore" placeholder="Ore">
+ <button onclick="calcolaKwh()">Calcola</button>
+ <p id="risultato"> Consumo: 0 kWh</p>
+<script>
+function calcolaKwh() {
+
+let watt =
+document.getElementById("watt").value;
+
+let ore =
+document.getElementById("ore").value;
+
+let consumo = (watt * ore) /1000;
+
+document.getElementById("risultato").innerText =
+"Consumo:" + consumo + "Kwh";
+
+}
+
+
+</script>
+
+
+</body>
+</html>
