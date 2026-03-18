@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Il Bar Segreto</title>
+</head>
+<body>
+
+<h1>Il Bar Segreto</h1>
+
+<p> Inserisci età:</p>
+<input type="number" id="eta"><br><br>
+
+<p> Inserisci password:</p>
+<input type="text" id="password"><br><br>
+
+<p> Inserisci Soldi:</p>
+<input type="number" id="soldi"><br><br>
+
+<button onclick="controllaAccesso()">Entra</button>
+
+<p id="risultato"></p>
+
+<script>
+function controllaAccesso() {
+    let eta = document.getElementById("eta").value;
+    let password = document.getElementById("password").value;
+    let soldi = document.getElementById("soldi").value;
+
+    let risultato = document.getElementById("risultato");
+
+    if (eta < 18) {
+        risultato.innerHTML = "❌ Accesso negato (sei minorenne)";
+    } else {
+        if (password === "banana") {
+            if (soldi >= 10) {
+                risultato.innerHTML = "✅ Puoi entrare nel bar segreto!";
+            } else {
+                risultato.innerHTML = "💸 Soldi insufficienti!";
+            }
+        } else {
+            risultato.innerHTML = "❌ Password sbagliata!";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
