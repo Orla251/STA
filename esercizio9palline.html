@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.pallina {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: lightgray;
+  display: inline-block;
+  margin: 20px;
+}
+
+.sezione {
+  margin-bottom: 60px;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= ESERCIZIO 1 ================= -->
+<div class="sezione">
+  <h2>Esercizio 1 - 2 Palline</h2>
+
+  <div id="p1" class="pallina"></div>
+  <div id="p2" class="pallina"></div>
+
+  <br>
+  <button onclick="generaDue()">Genera 2 Numeri</button>
+</div>
+
+
+<!-- ================= ESERCIZIO 2 ================= -->
+<div class="sezione">
+  <h2>Esercizio 2 - 3 Palline</h2>
+
+  <div id="p3" class="pallina"></div>
+  <div id="p4" class="pallina"></div>
+  <div id="p5" class="pallina"></div>
+
+  <br>
+  <button onclick="generaTre()">Genera 3 Numeri</button>
+</div>
+
+
+<script>
+
+// ===== ESERCIZIO 1 =====
+// pari = blu, dispari = rosso
+function generaDue() {
+
+  let n1 = Math.floor(Math.random() * 100);
+  let n2 = Math.floor(Math.random() * 100);
+
+  document.getElementById("p1").style.backgroundColor =
+    (n1 % 2 == 0) ? "blue" : "red";
+
+  document.getElementById("p2").style.backgroundColor =
+    (n2 % 2 == 0) ? "blue" : "red";
+}
+
+
+// ===== ESERCIZIO 2 =====
+// <30 blu, 30-59 verde, 60-89 rosso
+function generaTre() {
+
+  colora("p3");
+  colora("p4");
+  colora("p5");
+}
+
+function colora(id) {
+
+  let n = Math.floor(Math.random() * 90);
+
+  if (n < 30) {
+    document.getElementById(id).style.backgroundColor = "blue";
+  }
+  else if (n < 60) {
+    document.getElementById(id).style.backgroundColor = "green";
+  }
+  else {
+    document.getElementById(id).style.backgroundColor = "red";
+  }
+}
+
+</script>
+
+</body>
+</html>
