@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolo Percentuale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: 150px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #risultato {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calcolo Percentuale</h1>
+
+    <input type="number" id="numero" placeholder="Inserisci numero (n)">
+    <br>
+
+    <input type="number" id="tasso" placeholder="Inserisci tasso percentuale (t) (%)">
+    <br>
+
+    <button onclick="calcolaPercentuale()">Calcola</button>
+
+    <div id="risultato"></div>
+
+    <script>
+        function calcolaPercentuale() {
+            let n = parseFloat(document.getElementById("numero").value);
+            let t = parseFloat(document.getElementById("tasso").value);
+
+            if (isNaN(n) || isNaN(t)) {
+                document.getElementById("risultato").innerText = "Inserisci valori validi!";
+                return;
+            }
+
+            let p = (n * t) / 100;
+
+            document.getElementById("risultato").innerText = 
+                "La percentuale è: " + p;
+        }
+    </script>
+
+</body>
+</html>
