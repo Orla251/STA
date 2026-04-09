@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordine crescente</title>
+</head>
+<body>
+
+<h2>Verifica ordine crescente</h2>
+
+<p>a: </p>
+<input type="number" id="a"><br><br>
+
+<p>b: </p>
+<input type="number" id="b"><br><br>
+
+<p>c: </p>
+<input type="number" id="c"><br><br>
+
+<p>d: </p>
+<input type="number" id="d"><br><br>
+
+<button onclick="controlla()">Controlla</button>
+
+<p id="risultato"></p>
+
+<script>
+function controlla() {
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+    let c = parseInt(document.getElementById("c").value);
+    let d = parseInt(document.getElementById("d").value);
+
+    let output = "Valori inseriti: " + a + " , " + b + " , " + c + " , " + d + "<br>";
+
+    if (a < b && b < c && c < d) {
+        output += "Sono in ordine crescente";
+    } else {
+        output += "Non sono in ordine crescente";
+    }
+
+    document.getElementById("risultato").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
