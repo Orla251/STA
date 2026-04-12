@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Somma Massima</title>
+</head>
+<body>
+
+<h2>Trova i due numeri con somma massima</h2>
+
+<input type="number" id="n1" placeholder="Numero 1"><br><br>
+<input type="number" id="n2" placeholder="Numero 2"><br><br>
+<input type="number" id="n3" placeholder="Numero 3"><br><br>
+<input type="number" id="n4" placeholder="Numero 4"><br><br>
+
+<button onclick="calcola()">Calcola</button>
+
+<p id="risultato"></p>
+
+<script>
+function calcola() {
+    let numeri = [
+        parseInt(document.getElementById("n1").value),
+        parseInt(document.getElementById("n2").value),
+        parseInt(document.getElementById("n3").value),
+        parseInt(document.getElementById("n4").value)
+    ];
+
+    let maxSomma = numeri[0] + numeri[1];
+    let a = numeri[0], b = numeri[1];
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = i + 1; j < 4; j++) {
+            let somma = numeri[i] + numeri[j];
+            if (somma > maxSomma) {
+                maxSomma = somma;
+                a = numeri[i];
+                b = numeri[j];
+            }
+        }
+    }
+
+    document.getElementById("risultato").innerText =
+        "Numeri: " + a + " e " + b + " | Somma: " + maxSomma;
+}
+</script>
+
+</body>
+</html>
