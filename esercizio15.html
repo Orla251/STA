@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolo Banconote</title>
+</head>
+<body>
+
+<h2>Calcolo minimo banconote (10, 20, 50)</h2>
+
+<input type="number" id="somma" placeholder="Inserisci la somma">
+<button onclick="calcola()">Calcola</button>
+
+<p id="risultato"></p>
+
+<script>
+function calcola() {
+    let somma = parseInt(document.getElementById("somma").value);
+
+    if (isNaN(somma) || somma < 0) {
+        document.getElementById("risultato").innerText = "Inserisci un numero valido";
+        return;
+    }
+
+    let banconote50 = Math.floor(somma / 50);
+    let restoBanconote50 = somma % 50;
+
+    let banconote20 = Math.floor(restoBanconote50 / 20);
+    let restoBanconote20 = restoBanconote50 % 20;
+
+    let banconote10 = Math.floor(restoBanconote20 / 10);
+
+    let risultato = 
+        "Somma: " + somma +
+        "\n50€: " + banconote50 +
+        "\n20€: " + banconote20 +
+        "\n10€: " + banconote10;
+
+    document.getElementById("risultato").innerText = risultato;
+}
+</script>
+
+</body>
+</html>
